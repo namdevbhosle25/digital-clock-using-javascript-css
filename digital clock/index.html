@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="resize">
+      <h1 style="color: white; text-align: center; margin-top: 50px">
+        Digital lock
+      </h1>
+      <h2 id="time" style="color: white; text-align: center"></h2>
+
+      <h1 id="mydate" style="color: white;"></h1>
+
+      <button class="btn" onclick="setInterval(Timer,1000)">Start</button>
+
+      <button class = "btn" onclick="clearInterval(myVar)">Stop</button>
+    </div>
+
+    <script>
+      let myVar = setInterval(Timer, 1000);
+      function Timer() {
+        let date = new Date();
+        document.getElementById("time").innerHTML = date.toLocaleTimeString();
+      }
+      let mydate = new Date();
+      document.getElementById("mydate").innerHTML=mydate.getDate() + "/" + mydate.getMonth() + "/" + mydate.getFullYear();
+
+    </script>
+  </body>
+</html>
